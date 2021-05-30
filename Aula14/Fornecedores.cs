@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tarefa_aula_14
+namespace Aula14
 {
    public class Fornecedores : IImprimivel
     {
