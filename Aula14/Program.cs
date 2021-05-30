@@ -46,8 +46,27 @@ namespace Aula14
             relatorioClientes.ImprimirRelatorio();
             
 
+             Compra comprinhas = new Compra(hermenegildo, carrinho);
+            Compra compronas = new Compra(zoroastra, carrinho);
+            Relatorio relatorioCompras = new Relatorio("Relatório de Compras","Este relatório apresenta uma lista de todas as compras no mês de abril");
+            relatorioCompras.AdicionarItem(comprinhas);
+            relatorioCompras.AdicionarItem(compronas);
+            relatorioCompras.ImprimirRelatorio();
 
 
+            List<Produto>produtos = new List<Produto>();
+            produtos.Add(corehul);
+            produtos.Add(lepetope);
+            Fornecedores michaelsofit = new Fornecedores("Michaelsófit"," 4002.89.22", produtos);
+            List<Produto> produtoes = new List<Produto>();
+            produtoes.Add(corehul);
+            produtoes.Add(lepetope);
+            Fornecedores epou = new Fornecedores("Épou", "1221.04.99", produtoes);
+            Relatorio relatorioFornecedores = new Relatorio("Relatório de Fornecedores", "Este relatório apresenta com os nossos Fornecedores");
+            relatorioFornecedores.AdicionarItem(michaelsofit);
+            relatorioFornecedores.AdicionarItem(epou);
+            relatorioFornecedores.ImprimirRelatorio();
+            
         }
     }
 }
