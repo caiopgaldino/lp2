@@ -8,6 +8,7 @@ namespace Aula14
     {
         private Cliente _cliente;
         private Carrinho _carrinho;
+        private DateTime _hora;
         public Cliente Cliente
         {
             get
@@ -23,15 +24,24 @@ namespace Aula14
                 return this._carrinho;
             }
         }
+         public DateTime Hora
+        {
+            get
+            {
+                return this._hora;
+            }
+        }
         public Compra(Cliente cliente, Carrinho carrinho)
         {
             this._cliente = cliente;
             this._carrinho = carrinho;
+            this._hora = DateTime.Today;
         }
         public void Imprimir()
         {
             this.Cliente.Imprimir();
-            this.Carrinho.ImprimirCarrinho();
+            Console.WriteLine(this.Hora.ToString("g"));
+            this.Carrinho.Imprimir();
         }
     }
 }
