@@ -67,6 +67,23 @@ namespace Aula14
             relatorioFornecedores.AdicionarItem(epou);
             relatorioFornecedores.ImprimirRelatorio();
             
+            //instanciando os itens do estoque
+            Dictionary<Produto, int> artefatos = new Dictionary<Produto, int>();
+            artefatos.Add(rwindols,1000);
+            artefatos.Add(alface123,1000);
+            artefatos.Add(cottonshopi,1000);
+            artefatos.Add(premillere,1000);
+            artefatos.Add(mausi,1000);
+            artefatos.Add(lepetope,1000);
+            // instacinado estoque
+            Estoque estoque = new Estoque(artefatos);
+            // atualizando o estoque a partir das compras feitas por Hermenegildo e zoroastra
+            estoque.Atz_Estoque(carrinho);
+            estoque.Atz_Estoque(carrinho);
+            // gerando relatório de estoque
+            Relatorio estocamento = new Relatorio("Estoque de Produtos", " Este relatório apresenta o estoque dos produtos");
+            estocamento.AdicionarItem(estoque);
+            estocamento.ImprimirRelatorio();
         }
     }
 }
