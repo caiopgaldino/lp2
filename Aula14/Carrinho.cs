@@ -4,9 +4,9 @@ using Aula14;
 
 namespace Aula14
 {
-public class Carrinho
+public class Carrinho:IImprimivel
 {
-    private Dictionary<Produto, int> _itens;
+    protected Dictionary<Produto, int> _itens;
 
     public Dictionary<Produto, int> Itens
     {
@@ -60,7 +60,7 @@ public class Carrinho
         }
     }
 
-    public void ImprimirCarrinho()
+    public virtual void Imprimir()
     {
         Console.WriteLine("======== CARRINHO ========");
         foreach (KeyValuePair<Produto, int> parOrdenado in this._itens)
