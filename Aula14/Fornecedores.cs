@@ -8,6 +8,7 @@ namespace Aula14
     {
         private string _nome;
         private string _cnpj;
+        private string _tel;
         private List<Produto> _item;
         public string Nome
         {
@@ -24,16 +25,25 @@ namespace Aula14
                 return this._cnpj;
             }
         }
-        public Fornecedores(string nome, string cnpj, List<Produto>produtos)
+          public string Tel
+        {
+            get
+            {
+                return this._tel;
+            }
+        }
+        public Fornecedores(string nome, string tel, string cnpj, List<Produto>produtos)
         {
             this._nome = nome;
             this._cnpj = cnpj;
+            this._tel = tel;
             this._item = produtos;
         }
         public void Imprimir()
         {
             Console.WriteLine("Nome:\t{0}", this.Nome);
             Console.WriteLine("CNPJ:\t{0}", this.Cnpj);
+            Console.WriteLine("Telefone:\t{0}", this.Tel);
             foreach (var item in _item)
             {
                 item.Imprimir();
