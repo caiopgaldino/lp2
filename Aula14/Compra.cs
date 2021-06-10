@@ -41,7 +41,7 @@ namespace Aula14
         {
             this.Cliente.Imprimir();
             Console.WriteLine(this.Hora.ToString("g"));
-            this.Carrinho.Imprimir();
+            Console.WriteLine("Total do carrinho:\tR$ {0:0.00}", this.Carrinho.Total);
         }
     }
 }
