@@ -17,15 +17,37 @@ namespace Aula14
         {
             this._produtos = produtos;
         }
-        public void Atz_Estoque(Carrinho carinho)
+        public void Atz_Estoque(Compra compra)
         {
-        foreach(Produto qualquer in carinho.Itens.Keys)
+            int x = 0;
+            foreach (KeyValuePair<Produto, int> parordenado in compra.Carrinho.Itens)
             {
-                if(_produtos.ContainsKey(qualquer))
+                int quantidade = _produtos[parordenado.Key];
+                if (parordenado.Value > quantidade && x == 0)
                 {
-                    this._produtos[qualquer] = this._produtos[qualquer] - carinho.Itens[qualquer];
+                    Console.WriteLine("A compra do cliente {0} não pôde ser realizada", compra.Cliente.Nome);
+                    Console.WriteLine("Só temos {0} unidades do produto {1} em nosso estoque, por favor cliente {2}," +
+                        " atualize a quantidade deste item para um disponível em nosso estoque "
+                        , quantidade, parordenado.Key.Nome, compra.Cliente.Nome);
+                    x = x + 1;
+                    break;
                 }
             }
+            if (x==0)
+                {
+                    foreach (Produto qualquercoisa in compra.Carrinho.Itens.Keys)
+                    {
+
+                        if (_produtos.ContainsKey(qualquercoisa))
+                        {
+                            this._produtos[qualquercoisa] = this._produtos[qualquercoisa] - compra.Carrinho.Itens[qualquercoisa];
+                        }
+                        
+                    }
+                    Console.WriteLine("A compra do cliente {0} foi concluída com sucesso", compra.Cliente.Nome);
+                }
+            
+       
         }
         public override void Imprimir()
         {
