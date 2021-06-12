@@ -73,7 +73,8 @@ namespace Aula14
             artefatos.Add(alface123,1000);
             artefatos.Add(cottonshopi,1000);
             artefatos.Add(premillere,1000);
-            artefatos.Add(mausi,1000);
+            artefatos.Add(corehul, 1000);
+            artefatos.Add(mausi,5);
             artefatos.Add(lepetope,1000);
             // instacinado estoque
             Estoque estoque = new Estoque(artefatos);
